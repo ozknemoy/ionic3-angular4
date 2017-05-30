@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <div *ngFor="let c of users">
+      <ion-item *ngIf="c.foto">
+        <ion-avatar item-right>
+          <img src="{{baseImgUrl+c.foto}}">
+        </ion-avatar>
+        <h2>{{c.name}}</h2>
+        <p>{{c.surname}}</p>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

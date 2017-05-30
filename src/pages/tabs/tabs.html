@@ -1,0 +1,6 @@
+<ion-tabs>
+    <ion-tab [root]="home" tabTitle="Home" tabIcon="home"></ion-tab>
+    <ion-tab [root]="about" tabTitle="About" tabIcon="information-circle"></ion-tab>
+    <ion-tab [root]="users" tabTitle="Users" tabIcon="contacts"></ion-tab>
+    <ion-tab *ngIf="auth._isAuth" [root]="profile" tabTitle="Profile" tabIcon="analytics"></ion-tab>
+</ion-tabs>

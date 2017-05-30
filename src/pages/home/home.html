@@ -1,0 +1,106 @@
+<style>
+    .fr {
+        float: right
+    }
+
+    .cover {
+        border: 1px solid transparent;
+        border-radius: 5px;
+        width: 100px;
+    }
+
+    .progress-bar {
+
+        background-color: lightgrey;
+        height: 5px;
+        padding-right: 10px;
+        margin-right: 110px;
+    }
+
+    .progress-bar div {
+        background-color: #3759ff;
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .projects-item {
+        border: 1px solid transparent;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, .1);
+    }
+</style>
+<style>
+
+    ion-spinner {
+        width: 100vw;
+        height: 70px;
+        stroke: #444;
+        fill: #222;
+    }
+</style>
+<ion-header>
+    <ion-navbar>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <login-component></login-component>
+    <!--<audio controls>
+        <source src="{{zero}}" type="audio/mpeg" />
+        Если вы читаете это, значит ваш браузер не
+        поддерживает теги HTML5 аудио.
+    </audio>
+
+    <div>
+        <button (click)="playPause()" ion-button color="dark" outline>play/pause</button>
+        <button (click)="stop()" ion-button outline>stop</button>
+    </div>-->
+
+
+    <!--<ion-item>
+        <ion-range min="0" max="{{duration}}"
+                   (ngModelChange)="changeNow($event)"
+                   [ngModel]="now" color="secondary">
+            <ion-label range-left>{{nowPretify}}</ion-label>
+        </ion-range>
+    </ion-item>-->
+
+    <br><br>
+
+    <ion-list *ngIf="projects; else projs">
+        <div *ngFor="let c of projects" class="">
+            <ion-item *ngIf="c.cover" (click)="openPage(c.id)">
+                <div class="fr">
+                    <img class="fr cover" src="{{baseImgUrl+c.cover}}">
+                </div>
+                <div>
+                    <h2>{{c.name}}</h2>
+
+                    <p>
+                        <small>{{c.short_descr}}</small>
+                    </p>
+                    <div class="progress-bar">
+                        <!--[ngStyle]="{ 'width': '50%' }"-->
+                        <div [style.width.%]="55"></div>
+                    </div>
+                </div>
+            </ion-item>
+        </div>
+        <ng-template #projs>
+            <ion-spinner name="crescent"></ion-spinner>
+        </ng-template>
+    </ion-list>
+    <!--<ion-list>
+        <ion-item *ngFor="let c of countries">
+            <ion-avatar item-right>
+                <img src="{{c.flag}}">
+            </ion-avatar>
+            <h2>{{c.name}}</h2>
+            <p>Capital: {{c.capital}}, Region: {{c.region}}</p>
+        </ion-item>
+    </ion-list>-->
+</ion-content>

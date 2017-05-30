@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ionic App</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico?">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4e8ef7">
+
+
+    <!--я добавил-->
+
+    <!--я добавил end-->
+
+    <!-- cordova.js required for cordova apps -->
+    <script src="cordova.js"></script>
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="build/main.css" rel="stylesheet">
+    <style>
+
+        /*audio::-webkit-media-controls-panel {
+            -webkit-box-align: end;
+            background: blueviolet;
+            border-radius: 0;
+            display: -webkit-box!important;
+            position: relative;
+            padding: 0;
+            height: 50px;
+        }
+        audio::-webkit-media-controls-enclosure {
+            width: 100%;
+            bottom: 0;
+            text-indent: 0;
+            box-sizing: border-box;
+            border: none;
+            padding: 0;
+            height: 50px;
+        }
+        audio::-webkit-media-controls-play-button {
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            display: none;
+        }
+        audio::-webkit-media-controls-timeline {
+            height: 20px;
+            background-image: -webkit-linear-gradient(top, blueviolet, blue);
+            width: 400px;
+            border-radius: 15px;
+            margin: 0 15px 15px 0;
+        }
+        audio::-webkit-media-controls-timeline::-webkit-media-slider-thumb,
+        audio::-webkit-media-controls-volume-slider::-webkit-media-slider-thumb{
+            background: violet;
+            border-radius: 20px;
+        }
+        audio::-webkit-media-controls-volume-slider {
+            background-image: -webkit-linear-gradient(top, blueviolet, blue);
+            width: 50px;
+            min-width: 50px;
+            border-radius: 10px;
+            margin: 0 15px 20px 0;
+        }
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-mute-button,
+        audio::-webkit-media-controls-fullscreen-button {
+            margin-bottom: 10px;
+        }
+        audio::-webkit-media-controls-current-time-display {
+            color: violet;
+        }*/
+        audio{width: 100%}
+        audio::-webkit-media-controls-mute-button,
+        audio::-webkit-media-controls-fullscreen-button,
+        audio::-internal-media-controls-download-button,
+        audio::-webkit-media-controls-volume-slider,
+        audio::-webkit-media-controls-play-button{display: none}
+
+        audio::-webkit-media-controls-enclosure {overflow:hidden}
+        audio::-webkit-media-controls-current-time-display {margin-left: 15px}
+        /*audio::-webkit-media-controls-time-remaining-display {
+            padding-left: 0;
+            position: absolute;
+            right: 30px;
+            overflow: hidden;}*/
+        audio::-webkit-media-controls-panel {width: calc(100% + 30px)}
+
+
+    </style>
+
+</head>
+<body>
+
+<!-- Ionic's root component and where the app will load -->
+<ion-app></ion-app>
+
+<!-- The polyfills js is generated during the build process -->
+<script src="build/polyfills.js"></script>
+
+<!-- The bundle js is generated during the build process -->
+<script src="build/main.js"></script>
+
+</body>
+</html>

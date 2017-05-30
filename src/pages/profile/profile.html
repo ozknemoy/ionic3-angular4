@@ -1,0 +1,15 @@
+<ion-header><ion-navbar><ion-title>ProfilePage</ion-title></ion-navbar></ion-header>
+
+<ion-content padding>
+    <!--<login-component></login-component>-->
+    <div *ngIf="user">
+        <ion-item *ngIf="user.foto">
+            <ion-avatar item-right>
+                <img src="{{baseImgUrl+user.foto}}">
+            </ion-avatar>
+            <h2>{{user.name}}</h2>
+            <p>{{user.surname}}</p>
+        </ion-item>
+    </div>
+
+</ion-content>

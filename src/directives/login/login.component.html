@@ -1,0 +1,18 @@
+
+<div *ngIf="!auth._isAuth">
+    <button (click)="login()" ion-button color="dark" outline>login</button>
+
+
+    <ion-item>
+        <!--<ion-label color="primary">Email</ion-label>-->
+        <ion-input type="email" placeholder="введите Email..." [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <!--<ion-label color="primary">Пароль</ion-label>-->
+        <ion-input type="password" placeholder="введите пароль..." [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+</div>
+
+<!--[root]="profilePage"-->
+<button *ngIf="auth._isAuth"  (click)="logout()" ion-button color="dark" outline>logout</button>

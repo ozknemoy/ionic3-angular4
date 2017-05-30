@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+      <!--<button><ion-nav [root]="home" navTitle="Back">homehome</ion-nav></button>-->
+    <ion-title>
+        {{proj.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+    <p>Описание: {{proj.short_descr}}</p>
+
+    <img src="{{baseImgUrl + proj.cover}}" width="100%" alt="">
+
+    <p *ngIf="proj.descr_1">Описание:<small inner-html="proj.descr_1"> </small></p>
+    <p *ngIf="proj.descr_2">Описание: <small>{{proj.descr_2}}</small></p>
+    <p *ngIf="proj.descr_3">Описание: <small>{{proj.descr_3}}</small></p>
+</ion-content>
